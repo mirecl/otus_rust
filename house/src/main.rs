@@ -15,19 +15,19 @@ impl House {
     fn new() -> Self {
         todo!()
     }
-    fn get_room(name: String) -> Room {
+    fn get_room(&mut self, name: String) -> &mut Room {
         todo!()
     }
-    fn add_room(room: Room) -> bool {
+    fn add_room(&self, room: Room) -> bool {
         todo!()
     }
-    fn remove_room(name: String) -> bool {
+    fn remove_room(&self, name: String) -> bool {
         todo!()
     }
-    fn list_room() -> Vec<Room> {
+    fn list_room(&self) -> Vec<Room> {
         todo!()
     }
-    fn report_devices() {
+    fn report_devices(&self) {
         todo!()
     }
 }
@@ -41,10 +41,10 @@ impl Room {
     fn new(name: String) -> Self {
         todo!()
     }
-    fn add_device(device: Device) -> bool {
+    fn add_device(&self, device: Device) -> bool {
         todo!()
     }
-    fn remove_device(name: String) -> bool {
+    fn remove_device(&self, name: String) -> bool {
         todo!()
     }
 }
