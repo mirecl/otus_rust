@@ -34,14 +34,14 @@ trait IntoRoom {
 struct Socket {
     name: String,
     description: String,
-    power: usize,
+    watts: usize,
 }
 
 trait IntoSocket {
     fn new_device(name: String, description: String) -> Device;
     fn off(&self) -> bool;
     fn on(&self) -> bool;
-    fn get_current_power(&self) -> usize;
+    fn get_watts(&self) -> usize;
 }
 
 struct Thermometer {
