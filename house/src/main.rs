@@ -11,25 +11,13 @@ struct House {
     rooms: Vec<Room>,
 }
 
-impl House {
-    fn new() -> Self {
-        todo!()
-    }
-    fn get_room(&mut self, name: String) -> &mut Room {
-        todo!()
-    }
-    fn add_room(&self, room: Room) -> bool {
-        todo!()
-    }
-    fn remove_room(&self, name: String) -> bool {
-        todo!()
-    }
-    fn list_room(&self) -> Vec<Room> {
-        todo!()
-    }
-    fn report_devices(&self) {
-        todo!()
-    }
+trait IntoHouse {
+    fn new(name: String) -> Self;
+    fn get_room(&mut self, name: String) -> &mut Room;
+    fn add_room(&self, room: Room) -> bool;
+    fn remove_room(&self, name: String) -> bool;
+    fn list_room(&self) -> Vec<Room>;
+    fn report_devices(&self);
 }
 
 struct Room {
@@ -37,16 +25,10 @@ struct Room {
     devices: Vec<Device>,
 }
 
-impl Room {
-    fn new(name: String) -> Self {
-        todo!()
-    }
-    fn add_device(&self, device: Device) -> bool {
-        todo!()
-    }
-    fn remove_device(&self, name: String) -> bool {
-        todo!()
-    }
+trait IntoRoom {
+    fn new(name: String) -> Self;
+    fn add_device(&self, device: Device) -> bool;
+    fn remove_device(&self, name: String) -> bool;
 }
 
 struct Socket {
@@ -55,19 +37,11 @@ struct Socket {
     power: usize,
 }
 
-impl Socket {
-    fn new_device(name: String, description: String) -> Device {
-        todo!()
-    }
-    fn off(&self) {
-        todo!()
-    }
-    fn on(&self) {
-        todo!();
-    }
-    fn get_current_power(&self) -> usize {
-        todo!()
-    }
+trait IntoSocket {
+    fn new_device(name: String, description: String) -> Device;
+    fn off(&self) -> bool;
+    fn on(&self) -> bool;
+    fn get_current_power(&self) -> usize;
 }
 
 struct Thermometer {
@@ -76,13 +50,9 @@ struct Thermometer {
     temperature: usize,
 }
 
-impl Thermometer {
-    fn new_device(name: String, description: String) -> Device {
-        todo!()
-    }
-    fn get_temperature(&self) -> usize {
-        todo!();
-    }
+trait IntoThermometer {
+    fn new_device(name: String, description: String) -> Device;
+    fn get_temperature(&self) -> usize;
 }
 
 fn main() {
